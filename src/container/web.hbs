@@ -1,0 +1,62 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+<div>
+
+    {{#with web}}
+    <main>
+       <div>
+        <ul>
+            {{#each languages}}
+            <li>
+                <hr>
+                <h2>{{name}}</h2>
+                <p>{{version}}</p>
+                <p>{{description}}</p>
+                <h3>Elements:</h3>
+                <ul>
+                    {{#each elements}}
+                    <li>
+                        <p><i>{{name}}</i>-{{ description}}</p>
+                        <h4>Attributes:</h4>
+                        <ul>
+                            {{#each attributes}}
+                              <p><i>{{name}}</i>-{{ description}}</p>  
+                            {{/each}}
+                        </ul>
+                    </li>
+                    {{/each}}
+                </ul>
+                <ul>
+                    {{#each values}}
+                        <li>
+                             <p><i>{{value}}</i>-{{ description}}</p> 
+                        </li>
+                    {{/each}}
+                </ul>
+                <ul>
+                    {{#each functions}}
+                        <div>
+                            <code>{{ name}}</code>
+                            <title>{{description}}</title>
+                            <h4>Parameters:</h4>
+                            <ul>
+                                {{#each  parameters}}
+                                <li>
+                                    <p>name:{{name}}(type:{{type}})-{{description}}</p>
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    {{/each}}
+                </ul>
+            </li>
+            {{/each}}
+        </ul>
+        </div>
+    </main>
+    {{/with}}
+
+</div>
+

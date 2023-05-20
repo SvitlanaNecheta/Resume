@@ -1,0 +1,139 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+<div>
+    <h1>{{name}}</h1>
+    <header>
+        <div>
+            <hr>
+            <p>Birthdate: {{birthdate}} </p> 
+           <br>
+           <p> Birthplace: {{birthplace}}</p>
+           <br>
+           <p> Deathdate: {{deathdate}}</p>
+           <br>
+           <p>Deathplace: {{deathplace}}</p>
+           <br>
+           <p>nationality: {{nationality}}</p>
+           <br>
+           <hr>
+        </div>
+    </header>
+    <main>
+       <section>
+          <div><h2>Occupation: {{occupation}}</h2></div>
+          <ul>
+            {{#each known_for }}
+            <li>
+                {{this}}
+            </li>
+            {{/each}}
+          </ul>
+       </section>
+       <section>
+            <div>
+                <h2>Education:</h2>
+                <ul>
+                {{#each  education}}
+                <li>
+                    <p>Degtee-{{ degree}}, field - {{ field}},({{institution}},{{year}})</p>
+                    <br>
+                </li>
+                {{/each}}
+                </ul>
+            </div>
+            <div>
+                <h2> Notable publications:</h2>
+                <ul>
+                {{#each   notable_publications}}
+                <li>
+                    <p>{{ title}} / {{ year}} / {{ publisher}}</p>
+                    <br>
+                </li>
+                {{/each}}
+                </ul>
+                <hr>
+            </div>
+       </section>
+       <section>
+         <div>
+             <h3> Partners:</h3>
+             <ol>
+                {{#each  partners}}
+                <li>
+                    <p> {{name}} - {{relationship}} ( {{ years}})</p>
+                </li>
+                {{/each}}
+             </ol>
+             <hr>
+         </div>
+       </section>
+       <section>
+        <div>
+            <ul>
+                {{#each awards }}
+                <li>
+                    <em>{{title}}/{{year}}-{{ description}}</em>
+                </li>
+                {{/each}}
+                <br>
+            </ul>
+        </div>
+        <div>
+            <h3>Influences</h3>
+            <ul>
+                {{#each influences}}
+                <li>
+                   {{this}}
+                {{/each}}
+                <br>
+            </ul>
+            <br>
+            <h3>Influenced</h3>
+            <ul>
+                {{#each influenced}}
+                <li>
+                   {{this}}
+                {{/each}}
+                <br>
+            </ul>
+            <br>
+            <h3>Quotes</h3>
+            <ul>
+                {{#each  quotes}}
+                <li>
+                   {{this}}
+                {{/each}}
+                <br>
+            </ul>
+            <br>
+        </div>
+        <hr>
+       </section>
+       <section>
+            <div>
+                 <h2>Major discoveries</h2>
+                 <ul>
+                 {{#each major_discoveries}}
+                     <li>
+                        <em>{{ title}}/{{year}}/ {{ description}} </em>
+                    </li>
+                 {{/each}}
+                </ul>
+                <br>
+                <h3>Contribution</h3>
+                {{#with contributions}}
+                <div><em>{{title}}</em></div>
+                <div>{{description}}</div>
+                <div>{{ year}}</div>
+                <div>{{field}}</div>
+                {{/with}}
+            </div>
+       </section>
+
+    </main>
+    
+   
+</div>
+

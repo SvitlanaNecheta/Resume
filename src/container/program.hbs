@@ -1,0 +1,68 @@
+
+<div>
+
+    {{#with  program}}
+    <main>
+        {{#with excursion }}
+        <h1>{{ name}}</h1>
+         <hr>
+         <div>
+            <h2>Location:</h2>
+             {{#with location}}
+                 <p>{{city}} , {{country}} - {{../date}}</p>
+            {{/with}}
+            <br>
+        </div>
+        <h2>Program</h2>
+        <ul>
+            {{#each program}}
+            <li>
+                <div>
+                    <h3>{{name}} ({{type}}- {{duration}})</h3>
+                    {{#with details}}
+                        {{#with museum}}
+                            <div>
+                                <p><strong>{{name}}</strong></p>
+                                {{#with location}}
+                                    <address>{{address}},{{city}},{{country}}</address>
+                                {{/with}}
+                            </div>
+                            <div>
+                              {{#each  exhibits}}
+                                 <p><strong>{{name}}</strong>-<em>{{artist}}</em> ({{description}})</p> 
+                                {{#if audio_guide}}
+                                    <p>+audio guide</p>
+                                {{/if}}
+                                 <br>
+                                {{/each}}
+                          </div>
+                        {{/with}}
+                        
+                        {{#with venue}}
+                            <p><strong>{{name}}</strong></p>
+                                {{#with location}}
+                                    <address>{{address}},{{city}},{{country}}</address>
+                                {{/with}}
+
+                        {{/with}}
+                        <ul>
+                            {{#each performers}}
+                                <p>{{name}}-{{type}}</p>
+                            {{/each}}
+                        </ul>
+                        {{#with guide}}
+                             <p>{{name}}-{{language}} ({{rating}})</p>
+                        {{/with}}
+                    {{/with}}
+                    <br>
+                 
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+         {{/with}}
+    </main>
+    {{/with}}
+
+</div>
+

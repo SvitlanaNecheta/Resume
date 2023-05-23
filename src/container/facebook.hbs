@@ -9,14 +9,14 @@
         <hr>
    </header>
     <main>
-     <section>
+     <div>
         <ul>
             {{#each  users}}
                 <li>
                     <span class="text-primary"><h2>{{id}}.{{name}}</h2></span>
                     <span class="text-dark"><em>{{gender}}, age-{{age}}</em></span>
                     
-                    <div>
+                   <div>
                         <span class="text-dark"><h3>Friends:</h3></span>
                         <ul>
                             {{#each friends}}
@@ -24,18 +24,46 @@
                                      <span class="text-primary"><h3>{{id}}.{{name}}</h3></span>
                                      <span class="text-dark"><em>{{gender}}, age-{{age}}  </em></span>
                                      <hr>
-                                     <ul>
+                                        <ul>
                                         {{#each mutual_friends}}
                                             <li>
                                                 <span class="text-primary"><h4>{{id}}.{{name}}</h4></span>
                                                 <span class="text-dark"><em>{{gender}}, age-{{age}}</em></span>
+                                                <ul>
+                                                 {{#each mutual_friends}}
+                                                 <li>
+                                                    <span class="text-primary"><h4>{{id}}.{{name}}</h4></span>
+                                                   <span class="text-dark"><em>{{gender}}, age-{{age}}</em></span>
+                                                 </li>
+                                                {{/each}}
+                                                </ul> 
+
                                             </li>
                                         {{/each}}
                                      </ul> 
+                                     <hr>
+                                      <ul>
+                                        {{#each groups}}
+                                         <li>
+                                             <br>
+                                             <span class="text-primary"><h4>Group#{{id}}.{{name}}</h4></span>
+                                             <span class="text-dark"><p>{{description}}</p></span>
+                                            <div>
+                                                 <ul>
+                                                <span class="text-dark"><h4>Members</h4></span>
+                                                {{#each members}}
+                                                    <span class="text-primary"><h4>{{id}}.{{name}}</h4></span>
+                                                    <span class="text-dark"><em>{{gender}}, age-{{age}}</em></span>
+                                                 {{/each}}
+                                                </ul>
+                                            </div>
+                                             </li>
+                                        {{/each}}
+                                 </ul>
                                 </li>
                             {{/each}}
                         </ul>
-                    </div>
+                    </div> 
                     <hr>
                     <div>
                         <ul>
@@ -61,7 +89,7 @@
                 </li>
             {{/each}}
         </ul>
-     </section>
+     </div>
     </main> 
 </div>
 

@@ -1,0 +1,114 @@
+{{!-- 
+Це код container файлу для index сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+ --}}
+<div>
+    <main>
+        <div class="text-center">
+        {{#with page_header}}
+            <h1>{{title}}</h1>
+                <p class="text-uppercase">{{description}}</p>
+        {{/with}}
+        </div>
+         {{#with section}}
+            <section class="card">
+                <div class="card-body">
+                    {{#with  about_us}}
+                        <div class="text-end">
+                            <br>
+                            <span class="display-6">{{title_list.main}}</span>
+                            <br>
+                            <h2>{{title_list.sub}}</h2>
+                        </div>
+                        <br>
+                        <button class="btn btn-outline-info">{{button.text}}</button>
+                     {{/with}}
+                    <br>
+                </div>
+            </section>
+            <br>
+            <section class="card">
+                <div class="card-body">
+                    {{#with advantage}}
+                    <span class="display-5">{{title}}</span>
+                    <div class="card">
+                        <div class="card-body">
+                           {{#with efficiency}}
+                                <span class="display-4">{{title}}</span>
+                                 <h4>{{sub_title}}</h4>
+                                <p>{{description}}</p>
+                                <button class="btn btn-outline-warning">{{button}}</button>
+                            {{/with}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="card">
+                        <div class="card-body">
+                           {{#with innovation}}
+                                <div class="text-center">
+                                    <span class="display-4">{{title}}</span>
+                                    <h4>{{sub_title}}</h4>
+                                    <p>{{description}}</p>
+                                </div>
+                                <button class="btn btn-outline-warning">{{button}}</button>
+                               
+                            {{/with}}
+                        </div>
+                    </div>
+                     <br>
+                    <div class="card">
+                        <div class="card-body">
+                           {{#with collaboration}}
+                                <div class="text-end">
+                                    <span class="display-4">{{title}}</span>
+                                    <h4>{{sub_title}}</h4>
+                                    <p>{{description}}</p>
+                                </div>
+                                <button class="btn btn-outline-warning">{{button}}</button>
+                                
+                            {{/with}}
+                        </div>
+                    </div>
+                    {{/with}}
+                    <br>
+                    
+                </div>
+            </section>
+            <section class="card">
+                <div class="card-body">
+                    {{#with  agreement}}
+                        <span class="displey-5">{{title}}</span>
+                        <br>
+                        {{#with info}}
+                        <div class="card">
+                            <div class="card-body">
+                                <h5>{{sub_title}}</h5>
+                                {{#with detail}}
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <p>{{text}}</p>
+                                            <br>
+                                            <button class="btn btn-success">{{button}}</button>
+                                        </div>
+                                    </div>
+
+                                {{/with}}
+                            </div>
+                        </div>
+                        {{/with}}
+                    {{/with}}
+                </div>
+            </section>
+
+            
+        {{/with}}
+            
+    </main>
+</div>
+
+
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в <body>
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}

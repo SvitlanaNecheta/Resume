@@ -2,9 +2,28 @@
 Це код container файлу для index сторінки, 
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
  --}}
+<main>
+<header>
 
-<h1>Hello world</h1>
-
+</header>
+<h1>Першій проєкт</h1>
+<p>(складається з декілька сторінок)</p>
+<p></p>
+<div class="card">
+    <div class="card-body">
+       <button class="btn btn-secondary m-3 p-2"> {{>link text="Shopcatalog" href="/shopcatalog"}} </button>
+       <br>
+       <button class="btn btn-outline-secondary m-3 p-2">{{>link text="Shopreview" href="/shopreview"}} </button>
+       <br>
+       <button class="btn btn-outline-secondary m-3 p-2">{{>link text="Shoporder" href="/shoporder"}} </button>
+       <br>
+       <button class="btn btn-outline-secondary m-3 p-2">{{>link text="Shopprofile" href="/shopprof"}} </button>
+       <br>
+       <button class="btn btn-outline-secondary m-3 p-2">{{>link text="Shopcard" href="/shopcard"}} </button>
+       <br>
+    </div>
+</div>
+</main>
 {{!-- 
     Цей код містить лише те, що буде виводитись в <body>
     Адже наш layout/default.hbs має вже структуру HTML

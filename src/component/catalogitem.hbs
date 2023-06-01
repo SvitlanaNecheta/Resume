@@ -1,0 +1,55 @@
+ <div class="col-5 p-2 m-1">
+                           <div class="card p-2 m-1">
+                             <img class="card-img-top" src={{img}} alt="img">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <span>
+                                            {{#if isHot}}
+                                                <button class="badge text-bg-warning rounded-pill">Hot</button>
+                                            {{/if}}
+                                
+                                            {{#if isNew}}
+                                                <button class="badge text-bg-primary rounded-pill">New</button>
+                                            {{/if}}
+                                        </span>
+                                    </div>
+                                   {{#if isFast}}
+                                        <button class="btn btn-success m-2 p-2" href="#">
+                                           Швидка доставка
+                                        </button>
+                                    {{/if}}
+                                    {{#if isFree}}
+                                        <button class="btn btn-secondary m-2 p-2" href="#">
+                                           Безкоштовна доставка
+                                         </button>
+                                    {{/if}}
+                                    {{#with review}}
+                                        <p><em>{{amount}}</em> {{text}}</p>
+                                    {{/with}}
+                                    <h4>{{price}}</h4>
+                                    <p>{{delivery}}</p>
+                                    {{#each buttons}}
+                                        {{#if isPrimary}}
+                                            <button class="btn btn-primary m-2 з-2" href={{link}}>
+                                                {{text}}
+                                            </button>
+                                        {{/if}}
+                                        {{#if isSecondary}}
+                                            <button class="btn btn-secondary m-2 з-2" href={{link}}>
+                                                {{text}}
+                                            </button>
+                                        {{/if}}
+                                        
+                                    
+                                    {{/each}}
+                                    <ul type="circle">
+                                         {{#each characteristics}}
+                                            <li>
+                                             <p><em>{{title}}:</em>{{ value}}</p>
+                                            </li>
+                                       {{/each}}
+                                    </ul>
+                                    
+                                </div>  
+                            </div>
+                        </div>

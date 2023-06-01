@@ -1,0 +1,227 @@
+<main class="p-5">
+    <header>
+    {{#with navigation}}
+        <div class="card">
+            <div class="card-body">
+                <div class="nav">
+                    <div class="nav-item">
+                        <a href={{links.[0].href}} class="nav-link active">{{links.[0].text}}</a>
+                    </div>            
+                    <div class="nav-item">
+                        <a href={{links.[1].href}} class="nav-link">{{links.[1].text}}</a> 
+                    </div>
+                    <div class="nav-item">
+                        <a href={{links.[2].href}} class="nav-link">{{links.[2].text}}</a> 
+                    </div>            
+                    <div class="nav-item">
+                        <a class="nav-link">{{>link text="Головна" href="http://localhost:3000/"}}</a>  
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/with}}
+    </header>
+    <!--next-->
+    <section>
+        <div>
+            <div class="nav ">
+                {{#each breadcrumb}}
+                    <div class="nav-item">
+                        {{#if url}}
+                        <a href={{url}} class="nav-link active">{{name}}/</a>
+                        {{else}}
+                        <a href="#" class="nav-link disabled text-dark">{{name}}</a>
+                        {{/if}}
+                     </div>
+                {{/each}}
+            </div>
+           <h1>{{header}}</h1>
+           <div class="row">
+                {{#each sortBlock}}
+                    <div class="col-4">
+                            <select class="form-select">
+                                <option selected>{{placeholder}}</option>
+                                {{#each options}}
+                                    <option value={{value}}>{{text}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                {{/each}}
+           </div>
+
+        </div>
+        <div class="row">
+            <div class="col-4">
+                {{#with filterBlock}}
+                    {{#with sellers}}
+                     <div class="form-lebel">{{title}}</div>
+                     <div class="form-check">
+                        {{#each list}}
+                            <label class="form-check-label">{{value}}</label>
+                            <input type="checkbox" class="form-check-input">
+                            <br>
+                        {{/each}}
+                    </div>    
+                    {{/with}}
+                    {{#with  brands}}
+                     <div class="form-lebel">{{title}}</div>
+                     {{#with input}}
+                            <input class="form-control "placeholder={{placeholder}}>
+                     {{/with}}
+                     <div class="form-check">
+                        {{#each options}}
+                            <label class="form-check-label">{{value}}</label>
+                            <input type="checkbox" class="form-check-input">
+                            <br>
+                        {{/each}}
+                    </div>   
+
+                    {{/with}}
+                   
+                     {{#with price}}
+                     <div>
+                        <div class="form-lebel">{{title}}</div>
+                         <input class="form-control m-2 "placeholder={{range.from}}>
+                          <input class="form-control m-2 "placeholder={{range.to}}>
+                        {{#with button}}
+                             <button class="btn btn-outline-secondary m-2 з-2" href={{link}}>
+                                {{text}}
+                            </button>
+                        {{/with}}
+                    </div>
+                    {{/with}}
+                     {{#each filterList}}
+                     <div class="form-lebel">{{title}}</div>
+                     <div class="form-check">
+                        <hr>
+                        {{#each options}}
+                            <label class="form-check-label">{{value}}</label>
+                            <input type="checkbox" class="form-check-input">
+                            <br>
+                        {{/each}}
+                    </div>    
+                    {{/each}}
+                {{/with}}
+
+            </div>
+            <div class="col-8">
+                <div class="row">
+                   
+                    {{#each goodsList}}
+                       {{>catalogitem}}
+                    {{/each}}
+                    
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--next-->
+    <section>
+    {{#with service}}
+        <div class="card m-2 p-0 text-bg-success">
+            <div class="card-header">
+                <h2 class="text-center">{{title}}</h2>
+            </div>
+            <div class="card-body p-1 text-center">
+           
+                 <p class="ms-0 ps-0">{{description}}</p>
+                <button class="btn btn-primary m-2 з-2" href={{buttons.[0].link}}>
+                        {{buttons.[0].text}}
+                </button>
+            </div>
+         </div>
+    {{/with}}
+</section>
+    <!--next-->
+     <footer>
+       <div class="row">
+            <div>
+                 <hr>
+            </div>   
+            <div class="col-2">
+                 <div class="nav flex-column">
+                    <div class="nav-item">
+                            <a href={{footer.[0].[0].link}} class="nav-link active">{{footer.[0].[0].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[0].[1].link}} class="nav-link active">{{footer.[0].[1].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                             <a href={{footer.[0].[2].link}} class="nav-link active">{{footer.[0].[2].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[0].[3].link}} class="nav-link disabled">{{footer.[0].[3].text}}</a>
+                    </div>
+                </div>
+                 
+            </div>
+             <div class="col-2">
+                 <div class="nav flex-column">
+                    <div class="nav-item">
+                            <a href={{footer.[1].[0].link}} class="nav-link active">{{footer.[1].[0].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[1].[1].link}} class="nav-link active">{{footer.[1].[1].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[1].[2].link}} class="nav-link active">{{footer.[1].[2].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[1].[3].link}} class="nav-link disabled">{{footer.[1].[3].text}}</a>
+                    </div>
+                </div>
+             </div>
+             <div class="col-2">
+                 <div class="nav flex-column">
+                    <div class="nav-item">
+                            <a href={{footer.[2].[0].link}} class="nav-link active">{{footer.[2].[0].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[2].[1].link}} class="nav-link active">{{footer.[2].[1].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[2].[2].link}} class="nav-link active">{{footer.[2].[2].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[2].[3].link}} class="nav-link disabled">{{footer.[2].[3].text}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                 <div class="nav flex-column">
+                    <div class="nav-item">
+                            <a href={{footer.[3].[0].link}} class="nav-link active">{{footer.[3].[0].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[3].[1].link}} class="nav-link active">{{footer.[3].[1].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[3].[2].link}} class="nav-link active">{{footer.[3].[2].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[3].[3].link}} class="nav-link disabled">{{footer.[3].[3].text}}</a>
+                    </div>
+                </div>
+            </div>
+             <div class="col-2">
+                 <div class="nav flex-column">
+                    <div class="nav-item">
+                            <a href={{footer.[4].[0].link}} class="nav-link active">{{footer.[4].[0].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[4].[1].link}} class="nav-link active">{{footer.[4].[1].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[4].[2].link}} class="nav-link active">{{footer.[4].[2].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[4].[3].link}} class="nav-link disabled">{{footer.[4].[3].text}}</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+     </footer>
+
+    </main>

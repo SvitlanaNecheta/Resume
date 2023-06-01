@@ -1,0 +1,131 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+<div>
+    <header>
+       <span class="text-info"><cite>{{category}}</cite></span>
+       <hr>
+    </header>
+    <main>
+        <span class="text-primary"><h1>{{name}}</h1></span>
+        <span class="text-secondary"><em>{{name}}</em></span>
+         <section>
+            <hr>
+            <dev>
+                <span class="text-primary"><h2>Features</h2></span>
+                <br>
+                {{#with  features}}
+                    <span class="text-primary"><h3> Processor</h3></span>
+                    <br>
+                    <div>
+                    {{#with processor}}
+                         <span class="text-dark"><p>brand -{{brand}}</p></span>
+                         <span class="text-dark"><p> model-{{ model}}</p></span>
+                         <span class="text-dark"><p>speed-{{speed}}</p></span>
+                         <span class="text-dark"><p>cores-{{cores}}</p></span>
+                         <span class="text-dark"><p>cache-{{cache}}</p></span>
+                   {{/with}}
+                    </div>
+                    <br>
+                    <div>
+                    {{#with  memory}}
+                         <span class="text-dark"><p>memory-type {{type}}</p></span>
+                         <span class="text-dark"><p>memory-size {{ size}}</p></span>
+                         <span class="text-dark"><p>memory-speed {{speed}}</p></span>
+                   {{/with}}
+                    </div>
+                    <br>
+                    <div>
+                    {{#with  storage}}
+                         <span class="text-dark"><p> storage-type {{type}}</p></span>
+                         <span class="text-dark"><p> storage-size {{ size}}</p></span>
+                   {{/with}}
+                    </div>
+                      <br>
+                    <div>
+                    <span class="text-primary"><h3> display</h3></span>   
+                    {{#with  display}}
+                         <span class="text-dark"><p> size {{size}}</p></span>
+                         <span class="text-dark"><p> resolution {{resolution}}</p></span>
+                         <span class="text-dark"><p> technology {{technology}}</p></span>
+                         <span class="text-dark"><p> color_space {{color_space}}</p></span>
+                         <span class="text-dark"><p> brightness {{brightness}}</p></span>
+                         <span class="text-dark"><p> refresh_rate {{refresh_rate}}</p></span>
+                   {{/with}}
+                    </div>
+                     <br>
+                    <div>
+                    <span class="text-primary"><h3> graphics</h3></span>   
+                    {{#with  display}}
+                         <span class="text-dark"><p> brand {{brand}}</p></span>
+                         <span class="text-dark"><p> model {{model}}</p></span>
+                         <span class="text-dark"><p> memory {{memory}}</p></span>
+                   {{/with}}
+                    </div>
+                    <br>
+                    <div>
+                        <span class="text-primary"><h3>Ports</h3></span> 
+                        <ul>
+                             {{#each ports}}
+                                <li>
+                                   <span class="text-dark"><p> type {{type}}</p></span>
+                                   <span class="text-dark"><p> count {{count}}</p></span>
+                                   <ul>
+                                    {{#each features}}
+                                    <li>
+                                        <span class="text-dark"><p>{{this}}</p></span>
+                                    </li>
+                                    {{/each}}
+                                   </ul>
+
+                                </li>
+                             {{/each}}
+                        </ul>
+                       
+                    </div>
+                    <br>
+                    <div>
+                        <span class="text-primary"><h3>Battery</h3></span> 
+                        {{#with battery }}
+                            <span class="text-dark"><p>type {{type}}</p></span>
+                            <span class="text-dark"><p>capacity {{capacity}}</p></span>
+                            <span class="text-dark"><p>life {{life}}</p></span>
+                        {{/with}}
+                    </div>
+                    <br>
+                     <span class="text-dark"><p> weight {{ weight}}</p></span>
+                    <br>
+                    <div>
+                         <span class="text-primary"><h3>Dimensions</h3></span> 
+                        {{#with dimensions}}
+                            <span class="text-dark"><p>height: {{height}}</p></span>
+                            <span class="text-dark"><p>width: {{width}}</p></span>
+                            <span class="text-dark"><p>depth: {{depth}}</p></span>
+                        {{/with}}
+                    </div>
+                    <hr>
+                    <div>
+                         <span class="text-primary"><h3>Operating system:{{operating_system}}</h3></span> 
+                    </div>
+                    <hr>
+                    <div>
+                        <span class="text-primary"><h3> Accessories</h3></span> 
+                        <br>
+                        <ul>
+                            {{#each  accessories}}
+                                  <span class="text-dark"><p>{{name}}- {{ price}}</p></span>
+                            {{/each}}
+                        </ul>
+                    </div>
+                {{/with}}
+
+            </dev>
+          
+        </section>
+
+    </main>
+ 
+
+</div>
+

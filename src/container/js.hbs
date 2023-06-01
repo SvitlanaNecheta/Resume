@@ -1,0 +1,129 @@
+{{!--
+Це код container файлу для js сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+    <var>
+       <span class="bange text-primary"><h1>{{name}}</h1></span>
+        <span class="bange text-secondary"><h2>{{description}}</h2></span>
+    </var>
+    <main>
+        <section>
+            {{#with histor}}
+                <p>Year -{{year}}</p>
+                <p>Founder -{{founder}}</p>
+            {{/with}}
+            <hr>
+            <var>
+                <span class="bange text-success"><h3>Types</h3></span>
+                <ul>
+                    {{#each types}}
+                    <li>
+                        <p>{{this}}</p>
+                    </li>
+                    {{/each}}
+                </ul>
+                <hr>
+            </var>
+            <var>
+                {{#with syntax}}
+                <ul>
+                    {{#each variables}}
+                    <li>
+                        <p>{{this}}</p>
+                    </li>
+                    {{/each}}
+                </ul>
+                <br>
+                 <ul>
+                    {{#each functions}}
+                    <li>
+                        <p>{{this}}</p>
+                    </li>
+                    {{/each}}
+                </ul>
+                <br>
+                <ul>
+                    {{#each conditionals}}
+                    <li>
+                        <p>{{this}}</p>
+                    </li>
+                    {{/each}}
+                </ul>
+                <br>
+                <ul>
+                    {{#each loops}}
+                    <li>
+                        <p>{{this}}</p>
+                    </li>
+                    {{/each}}
+                </ul>
+                <br>
+                <ul>
+                    {{#each classes}}
+                    <li>
+                        <p>{{this}}</p>
+                    </li>
+                    {{/each}}
+                </ul>
+                <br>
+                {{/with}}
+            </var>
+        </section>
+        <hr>
+        <section>
+            <span class="bange text-success"><h3>Features</h3></span>
+            <div>
+                <ul>
+                    {{#each features}}
+                    <li>
+                        <p>{{this}}</p>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <span class="bange text-success"><h3>Libraries</h3></span>
+            <div>
+                <ul>
+                    {{#each libraries}}
+                    <li>
+                        <p>{{this}}</p>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <span class="bange text-success"><h3>Tools</h3></span>
+            <div>
+                <ul>
+                    {{#each tools}}
+                    <li>
+                        <p>{{this}}</p>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+             <br>
+            <hr>
+            <br>
+            <span class="bange text-success"><h3>Community</h3></span>
+            <div>
+                <ul>
+                    {{#each community}}
+                    <li>
+                        <p><span class="btn-link text-bg-primary">{{name}}-{{type}}</span> </p>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </section>
+                 
+
+    </main>
+</div>
+

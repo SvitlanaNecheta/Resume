@@ -1,0 +1,485 @@
+
+<main class="p-5">
+    <div class="card">
+        <div class="card-body">
+           {{#with navigation}} 
+            <div class="nav">
+                {{#each links}}
+                    <div class="nav-item">
+                         <a href={{href}} class="nav-link active">{{text}}</a>
+                     </div>
+                {{/each}}
+                    <div class="nav-item">
+                        <a href="#" class="nav-link disabled">Disabled</a>  
+                    </div>
+                </div>
+            {{/with}}
+        </div>
+    </div>
+    <div>
+        {{#with  header}}
+            <h1>{{title}}</h1>
+            {{#with button}}
+                <button class="btn btn-outline-secondary" src={{link}}>{{text}}</button>
+            {{/with}}
+        {{/with}}
+    </div>
+    <div>
+        <hr>
+    </div>
+    <div>
+        
+    <div class="card m-3 pe-5">
+            <div class="row">
+                <div class="col-2">
+                    <div class="row-12">
+                        <div class="col-12">
+                           <img class="card-img-top m-3" src={{goodsBlock.[0].image}} alt="img">
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-4"> 
+                    <div class="row-12">
+                        <div class="col-12">
+
+                            <h4>{{ goodsBlock.[0].name}}</h4>
+                            <p>{{ goodsBlock.[0].description}}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                 <div class="col-2">
+                    <div class="row-12">
+                        <div class="col-12">
+                            {{#with  goodsBlock.[0].price}}
+                                <h4>{{title}}</h4>
+                                <p>{{values}}</p>
+                            {{/with}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2"> 
+                    <div class="row-12">
+                        <div class="col-12">
+
+                            <p>{{goodsBlock.[0].amount}}</p>
+                        </div>
+                        </div>
+
+                </div>
+
+                <div class="col-2">
+                    <div class="row-12">
+                        <div class="col-12">
+
+                            {{#each goodsBlock.[0].buttons}}
+                                {{#if isPrimary }}
+                                <button class="btn btn-primary mt-2 me-1">{{text}}</button>
+                                {{else}}
+                                    {{#if isDanger}}
+                                        <button class="btn btn-outline-danger mt-2 me-5">{{text}}</button>
+                                    {{/if}}
+                                {{/if}}
+                            {{/each}}
+                        </div>
+                
+                    </div>
+                </div>
+                
+            </div>
+
+    </div>
+     <div class="card pe-5 m-3">
+            <div class="row">
+                <div class="col-2">
+                    <div class="row-12">
+                        <div class="col-12">
+                           <img class="card-img-top m-3" src={{goodsBlock.[1].image}} alt="img">
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-4"> 
+                    <div class="row-12">
+                        <div class="col-12">
+
+                            <h4>{{ goodsBlock.[1].name}}</h4>
+                            <p>{{ goodsBlock.[1].description}}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                 <div class="col-2">
+                    <div class="row-12">
+                        <div class="col-12">
+                            {{#with  goodsBlock.[1].price}}
+                                <h4>{{title}}</h4>
+                                <p>{{values}}</p>
+                            {{/with}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2"> 
+                    <div class="row-12">
+                        <div class="col-12">
+
+                            <p>{{goodsBlock.[1].amount}}</p>
+                        </div>
+                        </div>
+
+                </div>
+
+                <div class="col-2">
+                    <div class="row-12">
+                        <div class="col-12">
+
+                            {{#each goodsBlock.[1].buttons}}
+                                {{#if isPrimary }}
+                                <button class="btn btn-primary mt-2 me-1">{{text}}</button>
+                                {{else}}
+                                    {{#if isDanger}}
+                                        <button class="btn btn-outline-danger mt-2 me-5">{{text}}</button>
+                                    {{/if}}
+                                {{/if}}
+                            {{/each}}
+                        </div>
+                
+                    </div>
+                </div>
+                
+            </div>
+       
+    </div>
+    <div class="card pe-5 m-3">
+            <div class="row">
+                <div class="col-2">
+                    <div class="row-12">
+                        <div class="col-12">
+                           <img class="card-img-top m-3" src={{goodsBlock.[2].image}} alt="img">
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-4"> 
+                    <div class="row-12">
+                        <div class="col-12">
+
+                            <h4>{{ goodsBlock.[2].name}}</h4>
+                            <p>{{ goodsBlock.[2].description}}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                 <div class="col-2">
+                    <div class="row-12">
+                        <div class="col-12">
+                            {{#with  goodsBlock.[2].price}}
+                                <h4>{{title}}</h4>
+                                <p>{{values}}</p>
+                            {{/with}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2"> 
+                    <div class="row-12">
+                        <div class="col-12">
+
+                            <p>{{goodsBlock.[2].amount}}</p>
+                        </div>
+                        </div>
+
+                </div>
+
+                <div class="col-2">
+                    <div class="row-12">
+                        <div class="col-12">
+
+                            {{#each goodsBlock.[2].buttons}}
+                                {{#if isPrimary }}
+                                <button class="btn btn-primary mt-2 me-1">{{text}}</button>
+                                {{else}}
+                                    {{#if isDanger}}
+                                        <button class="btn btn-outline-danger mt-2 me-5">{{text}}</button>
+                                    {{/if}}
+                                {{/if}}
+                            {{/each}}
+                        </div>
+                
+                    </div>
+                </div>
+                
+            </div>
+       
+    </div>
+    <div class="card pe-5 m-3">
+            <div class="row">
+                <div class="col-2">
+                    <div class="row-12">
+                        <div class="col-12">
+                           <img class="card-img-top m-3" src={{goodsBlock.[].image}} alt="img">
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-4"> 
+                    <div class="row-12">
+                        <div class="col-12">
+
+                            <h4>{{ goodsBlock.[3].name}}</h4>
+                            <p>{{ goodsBlock.[3].description}}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                 <div class="col-2">
+                    <div class="row-12">
+                        <div class="col-12">
+                            {{#with  goodsBlock.[3].price}}
+                                <h4>{{title}}</h4>
+                                <p>{{values}}</p>
+                            {{/with}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2"> 
+                    <div class="row-12">
+                        <div class="col-12">
+
+                            <p>{{goodsBlock.[3].amount}}</p>
+                        </div>
+                        </div>
+
+                </div>
+
+                <div class="col-2">
+                    <div class="row-12">
+                        <div class="col-12">
+
+                            {{#each goodsBlock.[3].buttons}}
+                                {{#if isPrimary }}
+                                <button class="btn btn-primary mt-2 me-1">{{text}}</button>
+                                {{else}}
+                                    {{#if isDanger}}
+                                        <button class="btn btn-outline-danger mt-2 me-5">{{text}}</button>
+                                    {{/if}}
+                                {{/if}}
+                            {{/each}}
+                        </div>
+                
+                    </div>
+                </div>
+                
+            </div>
+       
+    </div>
+<div>
+    <hr>
+</div>
+<!--next-->
+<div>
+    {{#with total}}
+    <h2>{{title}}</h2>
+    <p class="displey-5">{{amount}}</p>
+    <p>{{delivery}}</p>
+        
+           {{#if buttons.[0].isSuccess}}
+                <button class="btn btn-success mb-4" href={{buttons.[0].link}}>{{buttons.[0].text}}</button>
+            {{/if}}
+            <br>
+           {{#if buttons.[1].isOutline}}
+                <a class="btn btn-outline-success" href={{buttons.[1].link}}>{{buttons.[1].text}}</a>
+            {{/if}} 
+        
+    {{/with}}
+</div>
+<div>
+    <hr>
+</div>
+<!--next-->
+<div>
+    {{#with goodsOtherBlock}}
+        <h3 class="text-center">{{title}}</h3>
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <img class="card-img-top" src={{cards.[0].image}} alt="img">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <span>{{cards.[0].title}}
+                                {{#if cards.[0].isHot}}
+                                    <button class="badge text-bg-warning rounded-pill">Hot</button>
+                                {{/if}}
+                    
+                                {{#if cards.[0].idNew}}
+                                  <button class="badge text-bg-primary rounded-pill">New</button>
+                                {{/if}}
+                            </span>
+                            <p>{{cards.[0].description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <img class="card-img-top" src={{cards.[1].image}} alt="img">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <span>{{cards.[1].title}}
+                                {{#if cards.[1].isHot}}
+                                    <button class="badge text-bg-warning rounded-pill">Hot</button>
+                                {{/if}}
+                    
+                                {{#if cards.[1].idNew}}
+                                  <button class="badge text-bg-primary rounded-pill">New</button>
+                                {{/if}}
+                            </span>
+                            <p>{{cards.[1].description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <img class="card-img-top" src={{cards.[2].image}} alt="img">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <span>{{cards.[2].title}}
+                                {{#if cards.[2].isHot}}
+                                    <button class="badge text-bg-warning rounded-pill">Hot</button>
+                                {{/if}}
+                    
+                                {{#if cards.[2].idNew}}
+                                  <button class="badge text-bg-primary rounded-pill">New</button>
+                                {{/if}}
+                            </span>
+                            <p>{{cards.[2].description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+    {{/with}}
+</div>
+<div>
+    <hr>
+</div>
+<!--next-->
+<div>
+    {{#with subscribe}}
+    <div class="card text-bg-dark">
+        <div class="card-hesder">
+            <h2>{{header}}</h2>
+        </div>
+        <div class="card-body">
+            <p>{{description}}</p>
+            
+            <button class="btn btn-primary m-4" src={{buttons.[0].link}} >{{buttons.[0].text}} </button>
+            <br>
+            <button class="btn btn-primary" src={{buttons.[1].link}} >{{buttons.[1].text}} </button>
+
+        </div>
+    </div>
+    {{/with}}
+</div>
+<!--next-->
+<div>
+        <div class="row">
+            <div>
+                 <hr>
+            </div>   
+            <div class="col-2">
+                 <div class="nav flex-column">
+                    <div class="nav-item">
+                            <a href={{footer.[0].[0].link}} class="nav-link active">{{footer.[0].[0].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[0].[1].link}} class="nav-link active">{{footer.[0].[1].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[0].[2].link}} class="nav-link active">{{footer.[0].[2].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[0].[3].link}} class="nav-link disabled">{{footer.[0].[3].text}}</a>
+                    </div>
+                </div>
+                 
+            </div>
+             <div class="col-2">
+                 <div class="nav flex-column">
+                    <div class="nav-item">
+                            <a href={{footer.[1].[0].link}} class="nav-link active">{{footer.[1].[0].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[1].[1].link}} class="nav-link active">{{footer.[1].[1].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[1].[2].link}} class="nav-link active">{{footer.[1].[2].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[1].[3].link}} class="nav-link disabled">{{footer.[1].[3].text}}</a>
+                    </div>
+                </div>
+             </div>
+             <div class="col-2">
+                 <div class="nav flex-column">
+                    <div class="nav-item">
+                            <a href={{footer.[2].[0].link}} class="nav-link active">{{footer.[2].[0].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[2].[1].link}} class="nav-link active">{{footer.[2].[1].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[2].[2].link}} class="nav-link active">{{footer.[2].[2].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[2].[3].link}} class="nav-link disabled">{{footer.[2].[3].text}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                 <div class="nav flex-column">
+                    <div class="nav-item">
+                            <a href={{footer.[3].[0].link}} class="nav-link active">{{footer.[3].[0].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[3].[1].link}} class="nav-link active">{{footer.[3].[1].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[3].[2].link}} class="nav-link active">{{footer.[3].[2].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[3].[3].link}} class="nav-link disabled">{{footer.[3].[3].text}}</a>
+                    </div>
+                </div>
+            </div>
+             <div class="col-2">
+                 <div class="nav flex-column">
+                    <div class="nav-item">
+                            <a href={{footer.[4].[0].link}} class="nav-link active">{{footer.[4].[0].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[4].[1].link}} class="nav-link active">{{footer.[4].[1].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[4].[2].link}} class="nav-link active">{{footer.[4].[2].text}}</a>
+                    </div>
+                     <div class="nav-item">
+                            <a href={{footer.[4].[3].link}} class="nav-link disabled">{{footer.[4].[3].text}}</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+   </div>
+    
+
+
+
+</main>
+{{!-- 
+    Цей код містить лише те, що буде виводитись в <body>
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
